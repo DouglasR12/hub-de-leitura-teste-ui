@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (email, senha) => {
+    cy.get('#email').type(email, { log: false }) // log: false para não exibir o email no log do Cypress
+    cy.get('#password').type(senha, { log: false }) // log: false para não exibir a senha no log do Cypress
+    cy.get('#login-btn').click()
+    cy.url().should('include', 'dashboard.html')
+})
+
+Cypress.Commands.add('preencherCadastro', (nome, email, telefone, senha, ConfirmarSenha) => {
+    cy.get('#name').type(nome)
+    cy.get('#email').type(email)
+    cy.get('#phone').type(telefone)
+    cy.get('#password').type(senha)
+    cy.get('#confirm-password').type(ConfirmarSenha)
+    cy.get('#terms-agreement').click()
+    cy.get('#register-btn').click()
+    cy.url().should('include', 'dashboard')
+})

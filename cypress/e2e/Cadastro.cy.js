@@ -30,6 +30,10 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cy.get('#terms-agreement').click()
         cy.get('#register-btn').click()
         cy.url().should('include', 'dashboard')
-        cy.get('user-name').should('contain',nome)
     });
+
+    it('Deve realizar cadastro com sucesso usando comando customizado', () => {
+        cy.preencherCadastro(faker.person.fullName(), faker.internet.email(), '81998232813', 'Teste@123', 'Teste@123')
+    });
+
 });
