@@ -8,7 +8,15 @@
         "Categoria": "Romance"
     },
     {
-        "Livro": "O hobbit",
+        "Livro": "O Hobbit",
         "Categoria": "Aventura"
+    },
+    {
+        "Livro": "O Senhor dos Anéis",
+        "Categoria": "Fantasia"
+    },
+    {
+        "Livro": "O Pequeno Príncipe",
+        "Categoria": "infantil"
     }
 ]
